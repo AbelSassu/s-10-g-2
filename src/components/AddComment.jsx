@@ -12,7 +12,7 @@ const AddComment = ({ bookId, aggiornaCommenti }) => {
         e.preventDefault();
 
         if (commentObject.comment.length < 1) {
-            alert("Il commento non può essere vuoto");
+            alert("Il commento non puÃ² essere vuoto");
             return;
         }
 
@@ -23,7 +23,7 @@ const AddComment = ({ bookId, aggiornaCommenti }) => {
                     method: "POST",
                     headers: {
                         Authorization:
-                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTlkNWJmZmU2Mjg4NjAwMTg4M2Y1MjMiLCJpYXQiOjE3MDQ4MTE1MTksImV4cCI6MTcwNjAyMTExOX0.rHZ8Xie8cXiBh7kguRW7E6EL0xMusK6EZQcNGU0trCQ",
+                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTczNzg5YmZlMDMxZTAwMTliYTFjNzkiLCJpYXQiOjE3MDQ4MDY2OTEsImV4cCI6MTcwNjAxNjI5MX0.11C0IO75d_FrHrNyQvZQ8zCGBdJp5K401T2byD0qAzA",
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(commentObject),
@@ -54,6 +54,7 @@ const AddComment = ({ bookId, aggiornaCommenti }) => {
                         setCommentObject({
                             ...commentObject,
                             comment: e.target.value,
+                            elementId: bookId,
                         });
                     }}
                     required
